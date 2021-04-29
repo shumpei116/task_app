@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
+  before_action :get_tasks
 
   def index
-    @tasks = Task.all
   end
 
   def show
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-
+    @task = Task.find(params[:id])
   end
 
   def update
@@ -36,6 +36,10 @@ class TasksController < ApplicationController
 
   private
     def task_params
-      params.require(:task).premit(:title, :start_date, :end_date, :all_day)
+      params.require(:task).permit(:title, :start_date, :end_date, :all_day)
+    end
+
+    def get_tasks
+      @tasks = Task.all
     end
 end
