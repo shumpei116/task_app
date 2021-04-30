@@ -50,4 +50,5 @@ class TasksController < ApplicationController
     def get_tasks
       @tasks = Task.all
     end
+
 end
