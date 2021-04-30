@@ -8,15 +8,15 @@
   <table>
     <tbody>
       <tr>
-        <th><%= f.label "タイトル" %></th>
+        <th><%= f.label "※タイトル" %></th>
         <td><%= f.text_field :title, class: "form-control" %></td>
       </tr>
       <tr>
-          <th><%= f.label "開始日" %></th>
+          <th><%= f.label "※開始日" %></th>
           <td><%= f.date_field :start_date, class: "form-control" %></td>
       </tr>
       <tr>
-          <th><%= f.label "終了日" %></th>
+          <th><%= f.label "※終了日" %></th>
           <td><%= f.date_field :end_date, class: "form-control" %></td>
       </tr>
       <tr>
@@ -29,6 +29,8 @@
       </tr>
     </tbody>
   </table>
+  <p>※は必須項目です</p>
+
   <div>
     <ul>
       <li><%= f.submit "スケジュールを新規登録する", class: "btn btn-primary" %></li>
