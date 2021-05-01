@@ -4,7 +4,8 @@ class TaskTest < ActiveSupport::TestCase
   def setup 
     @task = Task.new(title: "test_task",
                     start_date: "2021/1/1",
-                    end_date: "2021/12/31"
+                    end_date: "2021/12/31",
+                    memo: "testmemo"
                     )
   end
 
@@ -34,6 +35,17 @@ class TaskTest < ActiveSupport::TestCase
 
   test "終了日が空のデータは無効なこと" do
     @task.end_date = ""
+    assert @task.invalid?
+  end
+
+  test "開始日より終了日が後の時有効なこと" do
+    @task.start_date = "2021/1/29"
+    @task.end_date = "2021/1/30"
+    assert @task.valid?
+  end
+  test "開始日より終了日が前の時無効なこと" do
+    @task.start_date = "2021/1/31"
+    @task.end_date = "2021/1/30"
     assert @task.invalid?
   end
 end

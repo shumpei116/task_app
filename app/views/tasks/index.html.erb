@@ -21,9 +21,9 @@
       <% @tasks.each do |task| %>
         <tr>
           <td><%= task.id %></td>
-          <td><%= task.title %></td>
-          <td><%= task.start_date %></td>
-          <td><%= task.end_date %></td>
+          <td><%= link_to "#{task.title}", task %></td>
+          <td><%= task.start_date.strftime("%Y年%m月%d日") %></td>
+          <td><%= task.end_date.strftime("%Y年%m月%d日") %></td>
           <% if task.all_day == true %>
             <td><strong>○</strong></td>
           <% else %>

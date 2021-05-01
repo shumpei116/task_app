@@ -16,14 +16,6 @@
   }
 }
 
-// .checkbox {
-//   margin-top: -10px;
-//   margin-bottom: 10px;
-//   span {
-//     margin-left: 20px;
-//     font-weight: normal;
-//   }
-// }
 
 table th {
   background-color: #9ef3c1;
@@ -33,9 +25,7 @@ table th, table td {
   border: solid 1px black;
   padding: 10px 20px;
 }
+
 th {
-  display: table-cell;
-  vertical-align: inherit;
-  font-weight: bold;
-  text-align: -internal-center;
+  text-align: center;
 }

@@ -8,6 +8,8 @@ class Task < ApplicationRecord
   # 開始日より終了日の方が前だった場合にfalseを返す
 
   def start_end_check
-    errors.add(:end_date, "は開始日より前の日付には登録できません。") unless self.start_date <= self.end_date 
+    if self.start_date && self.end_date
+      errors.add(:end_date, "は開始日より前の日付には登録できません。") unless self.start_date <= self.end_date 
+    end
   end
 end
