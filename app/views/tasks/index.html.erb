@@ -5,12 +5,12 @@
   <table>
     <thead>
       <tr>
-        <th>ID</th>
-        <th>タイトル</th>
-        <th>開始日</th>
-        <th>終了日</th>
-        <th>終日</th>
-        <th>スケジュール更新日時</th>
+        <th><%= sort_order "id", "ID" %></th>
+        <th><%= sort_order "title", "タイトル" %></th>
+        <th><%= sort_order "start_date", "開始日" %></th>
+        <th><%= sort_order "end_date", "終了日" %></th>
+        <th><%= sort_order "all_day", "終日" %></th>
+        <th><%= sort_order "updated_at", "スケジュール更新日時" %></th>
         <th>確認</th>
         <th>編集</th>
         <th>削除</th>
