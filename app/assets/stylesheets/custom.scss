@@ -1,6 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+header, footer {
+  width: 100%;
+  padding: 10px;
+  background: #33a83d;
+  color: #fff;
+  margin: 0px;
+}
+
 .field_with_errors {
   @extend .has-error;
   .form-control {
@@ -18,7 +26,7 @@
 
 
 table th {
-  background-color: #9ef3c1;
+  background-color: #33a83d69;
 }
 
 table th, table td {
@@ -36,7 +44,8 @@ p {
 
 .submit ul {
   list-style: none;
+  padding-left: 20px;
 }
-.alert {
-  margin-left: auto;
+.submit li {
+  margin-bottom: 10px;
 }

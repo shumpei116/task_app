@@ -17,7 +17,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      flash[:success] = "新規スケジュールが作成されました"
+      flash[:info] = "新規スケジュールが作成されました"
       redirect_to tasks_path
     else
       render "new"
