@@ -39,7 +39,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    Task.find(params[:id]).destroy
     flash[:success] = "スケジュールを削除しました"
     redirect_to tasks_path
   end
