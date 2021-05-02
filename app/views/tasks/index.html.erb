@@ -1,0 +1,42 @@
+<div class="main_container">
+  <div class="information">
+    <h2>スケジュール一覧</h2>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th><%= sort_order "id", "ID" %></th>
+        <th><%= sort_order "title", "タイトル" %></th>
+        <th><%= sort_order "start_date", "開始日" %></th>
+        <th><%= sort_order "end_date", "終了日" %></th>
+        <th><%= sort_order "all_day", "終日" %></th>
+        <th><%= sort_order "updated_at", "スケジュール更新日時" %></th>
+        <th>確認</th>
+        <th>編集</th>
+        <th>削除</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td><%= task.id %></td>
+          <td><%= link_to "#{task.title}", task %></td>
+          <td><%= task.start_date.strftime("%Y年%m月%d日") %></td>
+          <td><%= task.end_date.strftime("%Y年%m月%d日") %></td>
+          <% if task.all_day == true %>
+            <td><strong>○</strong></td>
+          <% else %>
+          <td>   </td>
+          <% end %>
+          <td><%= task.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></td>
+          <td><%= link_to "確認", task %></td>
+          <td><%= link_to "編集", edit_task_path(task) %></td>
+          <td><%= link_to "削除", task_path(task), method: :delete, data: { confirm: "本当に削除しますか" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p><%= link_to "スケジュール新規登録", new_task_path%></p>
+</div>

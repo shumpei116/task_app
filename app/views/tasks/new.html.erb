@@ -1,0 +1,40 @@
+<div class="main_container">
+  <div class="information">
+  <h2>スケジュール新規作成</h2>
+</div>
+
+<%= form_with(model: @task, local: true) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <table>
+    <tbody>
+      <tr>
+        <th><%= f.label "※タイトル" %></th>
+        <td><%= f.text_field :title, class: "form-control" %></td>
+      </tr>
+      <tr>
+          <th><%= f.label "※開始日" %></th>
+          <td><%= f.date_field :start_date, class: "form-control" %></td>
+      </tr>
+      <tr>
+          <th><%= f.label "※終了日" %></th>
+          <td><%= f.date_field :end_date, class: "form-control" %></td>
+      </tr>
+      <tr>
+          <th><%= f.label "終日" %></th>
+          <td><%= f.check_box :all_day %><span>終日の場合はチェックを入れてね！</span></td>
+      </tr>
+      <tr>
+          <th><%= f.label "スケジュールメモ" %></th>
+          <td><%= f.text_area :memo, class: "form-control" %></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>※は必須項目です</p>
+
+  <div class="submit">
+    <ul>
+      <li class="submit-li"><%= f.submit "スケジュールを新規登録する" %></li>
+      <li><%= link_to "スケジュール一覧に戻る", tasks_path %>
+    </ul>
+  </div>
+<% end %>
